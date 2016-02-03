@@ -7,9 +7,10 @@ env:
   - secure: WyWYFgwTedDHQ9OlLVk+996ehZXsD2KBPqFdHz9IgPBBn00x5Z8R7np4OegFYshy5/2ptOIN6Ejjq2352ZpLOUBPV6R0513419rLhbFv3FayZ7b+IAngTLiQu6t2WGYNmOKEZhBdzrHA1YCujI+WSvqcC+6XArAXjIBDCQ36ZluC7shULr2+0DDb9ZA8cXr8Xcd9FitaD4XxTUh+sFRboaJ/nqduZaOSUNRRkwA8gXdKfK7DAt2VZQ9WkTIc3Cq1SNLVFPhTsKos5YbILa4KsRNPPwENXYdiv2h+S7ER70y6fD6VzGjvh1kdEzxnba5xNJhDtntDM7RG+LzTAcW90x4lg4TAgjFLCCBVFfbkL0iVQbHnsSmpi+IKWi83jYzjGzBtBndMpq+Qm317uy76f+hQFGcmEuVSwKN7YraXXpzu31p6j8UYhnQNYQAimaBYGH02Q7AyeqfgrnyUY7N0POme06LQ3E0PXozxTXO/vTcwu51JnBNkIaHDY+h80lLQOm8yBbhNtmbiWkpM3aEaUbDYUrph7hIXpt/SURYFZBZaYVXj5nFTF/T3JZ/kTPvWV5iuRBRqcNCcoCYjTSGTG4KrcoTPT1lzAMJX4V/8rfOIP2NGds0kas15DtUPrdcTdCl9JfLSoPEAGPQ85Oxm7qFSQqzhx/IJcGXvOTBWjrI=
   matrix:
   - NODE_VERSION="4.2.4"
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y libudev-dev
+addons:
+  apt:
+    packages:
+    - libudev-dev
 install:
 - export PATH=./node_modules/.bin/:$PATH
 script:

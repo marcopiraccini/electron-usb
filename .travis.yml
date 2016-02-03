@@ -1,21 +1,7 @@
 language: objective-c
 env:
   matrix:
-  - NODE_VERSION="4.2.4" 
-
-before_install:
-- brew update
-- brew install nvm
-- mkdir ~/.nvm
-- export NVM_DIR=~/.nvm
-- source $(brew --prefix nvm)/nvm.sh
-- nvm install $NODE_VERSION
-- node --version
-- npm --version
-- npm install pangyp -g
-- pangyp -v
-- npm update -g npm
-- npm --version
+  - NODE_VERSION="4.2.4"
 
 install:
 - export PATH=./node_modules/.bin/:$PATH

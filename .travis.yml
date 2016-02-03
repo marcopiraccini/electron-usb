@@ -10,7 +10,7 @@ env:
 install:
 - export PATH=./node_modules/.bin/:$PATH
 script:
-- apt-get install libusb-dev
+- apt-get install libudev-dev
 - npm install --build-from-source --node-gyp=$(which pangyp)
 - "./node_modules/.bin/node-pre-gyp rebuild"
 - "./node_modules/.bin/node-pre-gyp package"

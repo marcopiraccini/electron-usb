@@ -1,10 +1,12 @@
-language: objective-c
+language: c
 
 os:
   - linux
   - osx
 
 env:
+  global:
+  - NODE_PRE_GYP_GITHUB_TOKEN=6a7df9a737a10f5ebab55bc0eb39419a5ee70e66
   matrix:
   - NODE_VERSION="4.2.4"
 

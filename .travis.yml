@@ -1,4 +1,9 @@
 language: objective-c
+
+os:
+  - linux
+  - osx
+
 env:
   matrix:
   - NODE_VERSION="4.2.4"

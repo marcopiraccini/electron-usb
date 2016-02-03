@@ -1,6 +1,6 @@
-language: node.js
+language: node_js
 node_js:
-  - 4.2.4
+  - "4.2.4"
 os:
 - osx
 - linux

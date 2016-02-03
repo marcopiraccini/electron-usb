@@ -1,7 +1,7 @@
 environment:
   GYP_MSVS_VERSION: 2013
   NODE_PRE_GYP_GITHUB_TOKEN: 022ed4aaf18557c063b990c046a827f8767dcc14
-  
+
   matrix:
     - node_version: '4.2.4'
 
@@ -19,6 +19,14 @@ build_script:
         ./node_modules/.bin/node-pre-gyp package 2>&1 | write-host
         ./node_modules/.bin/node-pre-gyp-github publish 2>&1 | write-host;
       }
+
+deploy:
+  description: 'electron-usb release'
+  provider: GitHub
+  auth_token:
+    secure: WyWYFgwTedDHQ9OlLVk+996ehZXsD2KBPqFdHz9IgPBBn00x5Z8R7np4OegFYshy5/2ptOIN6Ejjq2352ZpLOUBPV6R0513419rLhbFv3FayZ7b+IAngTLiQu6t2WGYNmOKEZhBdzrHA1YCujI+WSvqcC+6XArAXjIBDCQ36ZluC7shULr2+0DDb9ZA8cXr8Xcd9FitaD4XxTUh+sFRboaJ/nqduZaOSUNRRkwA8gXdKfK7DAt2VZQ9WkTIc3Cq1SNLVFPhTsKos5YbILa4KsRNPPwENXYdiv2h+S7ER70y6fD6VzGjvh1kdEzxnba5xNJhDtntDM7RG+LzTAcW90x4lg4TAgjFLCCBVFfbkL0iVQbHnsSmpi+IKWi83jYzjGzBtBndMpq+Qm317uy76f+hQFGcmEuVSwKN7YraXXpzu31p6j8UYhnQNYQAimaBYGH02Q7AyeqfgrnyUY7N0POme06LQ3E0PXozxTXO/vTcwu51JnBNkIaHDY+h80lLQOm8yBbhNtmbiWkpM3aEaUbDYUrph7hIXpt/SURYFZBZaYVXj5nFTF/T3JZ/kTPvWV5iuRBRqcNCcoCYjTSGTG4KrcoTPT1lzAMJX4V/8rfOIP2NGds0kas15DtUPrdcTdCl9JfLSoPEAGPQ85Oxm7qFSQqzhx/IJcGXvOTBWjrI=
+  on:
+    branch: master                 # release from master branch only
 
 platform:
   - x86

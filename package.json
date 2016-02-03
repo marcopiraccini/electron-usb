@@ -1,37 +1,29 @@
 {
-  "name": "usb",
+  "name": "electron-usb",
   "description": "Library to access USB devices",
   "keywords": [
     "usb",
     "hardware"
   ],
   "author": {
-    "name": "Nonolith Labs",
-    "url": "http://www.nonolithlabs.com"
+    "name": "Marco Piraccini",
+    "url": "https://github.com/marcopiraccini"
   },
   "contributors": [
     {
-      "name": "Kevin Mehall",
-      "email": "km@kevinmehall.net",
-      "url": "http://kevinmehall.net"
-    },
-    {
-      "name": "Tim Ryan",
-      "email": "tim@technical.io",
-      "url": "http://timryan.org"
-    },
-    {
-      "name": "Christopher Klein"
+      "name": "Marco Piraccini",
+      "email": "marco.piraccini@gmail.com",
+      "url": "https://github.com/marcopiraccini"
     }
   ],
-  "version": "1.1.1",
+  "version": "0.0.1",
   "engines": {
     "node": ">=0.12.x"
   },
   "main": "./usb",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nonolith/node-usb.git"
+    "url": "https://github.com/marcopiraccini/electron-usb"
   },
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build",
@@ -41,13 +33,14 @@
   },
   "binary": {
     "module_name": "usb_bindings",
-    "module_path": "./src/binding",
-    "host": "https://tessel-builds.s3-us-west-2.amazonaws.com",
-    "remote_path": "./pre-gyp/{name}/v{version}"
+    "module_path": "./build/{configuration}/{node_abi}-{platform}-{arch}/",
+    "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
+    "host": "https://github.com/marcopiraccini/electron-usb/releases/download/0.0.1"
   },
   "dependencies": {
     "nan": "^2.1.0",
-    "node-pre-gyp": "^0.6.13"
+    "node-pre-gyp": "^0.6.13",
+    "node-pre-gyp-github": "^1.1.2",
   },
   "bundledDependencies": [
     "node-pre-gyp"

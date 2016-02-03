@@ -1,7 +1,6 @@
 environment:
   GYP_MSVS_VERSION: 2013
-  NODE_PRE_GYP_GITHUB_TOKEN: 022ed4aaf18557c063b990c046a827f8767dcc14
-
+  
   matrix:
     - node_version: '4.2.4'
 

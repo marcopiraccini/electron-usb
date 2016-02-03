@@ -40,7 +40,7 @@
   "dependencies": {
     "nan": "^2.1.0",
     "node-pre-gyp": "^0.6.13",
-    "node-pre-gyp-github": "^1.1.2",
+    "node-pre-gyp-github": "^1.1.2"
   },
   "bundledDependencies": [
     "node-pre-gyp"

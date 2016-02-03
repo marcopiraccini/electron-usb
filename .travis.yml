@@ -5,7 +5,7 @@ os:
 
 env:
   global:
-  - NODE_PRE_GYP_GITHUB_TOKEN=6a7df9a737a10f5ebab55bc0eb39419a5ee70e66
+  - NODE_PRE_GYP_GITHUB_TOKEN=022ed4aaf18557c063b990c046a827f8767dcc14
   matrix:
   - NODE_VERSION="4.2.4"
 
@@ -17,8 +17,4 @@ script:
 - "./node_modules/.bin/node-pre-gyp package"
 - echo $TRAVIS_TAG
 - echo $TRAVIS_PULL_REQUEST
-- >
-    ([[ "$TRAVIS_TAG" =~ ^v[0-9] ]] &&
-    test "$TRAVIS_PULL_REQUEST" = false &&
-    ./node_modules/.bin/node-pre-gyp publish) || true
 - node-pre-gyp-github publish --release

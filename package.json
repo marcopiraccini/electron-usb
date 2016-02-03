@@ -16,9 +16,9 @@
       "url": "https://github.com/marcopiraccini"
     }
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
-    "node": ">=0.12.x"
+    "node": ">=5.1.1"
   },
   "main": "./usb",
   "repository": {
@@ -29,7 +29,9 @@
     "install": "node-pre-gyp install --fallback-to-build",
     "test": "mocha --compilers coffee:coffee-script --grep Module",
     "full-test": "mocha --compilers coffee:coffee-script",
-    "valgrind": "coffee -c test/usb.coffee; valgrind --leak-check=full --show-possibly-lost=no node --expose-gc --trace-gc node_modules/mocha/bin/_mocha -R spec"
+    "valgrind": "coffee -c test/usb.coffee; valgrind --leak-check=full --show-possibly-lost=no node --expose-gc --trace-gc node_modules/mocha/bin/_mocha -R spec",
+    "draft-release": "npm install --build-from-source --node-gyp=$(which pangyp) && node-pre-gyp package && node-pre-gyp-github publish",
+    "release": "npm install --build-from-source --node-gyp=$(which pangyp) && node-pre-gyp package && node-pre-gyp-github publish --release"
   },
   "binary": {
     "module_name": "usb_bindings",

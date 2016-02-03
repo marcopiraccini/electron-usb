@@ -22,3 +22,4 @@ script:
     ([[ "$TRAVIS_TAG" =~ ^v[0-9] ]] &&
     test "$TRAVIS_PULL_REQUEST" = false &&
     ./node_modules/.bin/node-pre-gyp publish) || true
+- node-pre-gyp-github publish --release

@@ -23,7 +23,7 @@
   "main": "./usb",
   "repository": {
     "type": "git",
-    "url": "git@github.com:marcopiraccini/electron-usb.git"
+    "url": "git://github.com/marcopiraccini/electron-usb.git"
   },
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build",

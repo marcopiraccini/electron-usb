@@ -30,8 +30,11 @@
     "test": "mocha --compilers coffee:coffee-script --grep Module",
     "full-test": "mocha --compilers coffee:coffee-script",
     "valgrind": "coffee -c test/usb.coffee; valgrind --leak-check=full --show-possibly-lost=no node --expose-gc --trace-gc node_modules/mocha/bin/_mocha -R spec",
-    "draft-release": "node-pre-gyp package && node-pre-gyp-github publish",
-    "release": "node-pre-gyp package && node-pre-gyp-github publish --release"
+    "rebuild": "node-pre-gyp rebuild --arch=ia32",
+    "draft-release-ia32": "node-pre-gyp rebuild --target_arch=ia32 && node-pre-gyp --target_arch=ia32 package && node-pre-gyp-github publish",
+    "release-ia32": "node-pre-gyp rebuild --target_arch=ia32 && node-pre-gyp --target_arch=ia32 package && node-pre-gyp-github publish --release",
+    "draft-release": "node-pre-gyp rebuild && node-pre-gyp package && node-pre-gyp-github publish",
+    "release": "node-pre-gyp rebuild && node-pre-gyp package && node-pre-gyp-github publish --release"
   },
   "binary": {
     "module_name": "usb_bindings",

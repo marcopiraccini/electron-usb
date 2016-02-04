@@ -18,7 +18,7 @@
   ],
   "version": "0.0.9",
   "engines": {
-    "node": ">=5.1.1"
+    "electron": ">=0.36"
   },
   "main": "./usb",
   "repository": {
@@ -39,9 +39,9 @@
   },
   "binary": {
     "module_name": "usb_bindings",
-    "module_path": "./build/{configuration}/{node_abi}-{platform}-{arch}/",
-    "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
-    "host": "https://github.com/marcopiraccini/electron-usb/releases/download/0.0.8"
+    "module_path": "./build/{configuration}/electron-v0.36-{platform}-{arch}/",
+    "package_name": "electron-v0.36-{platform}-{arch}.tar.gz",
+    "host": "https://github.com/marcopiraccini/electron-usb/releases/download/0.0.10"
   },
   "dependencies": {
     "nan": "^2.1.0",

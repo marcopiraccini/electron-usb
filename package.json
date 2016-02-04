@@ -30,11 +30,10 @@
     "test": "mocha --compilers coffee:coffee-script --grep Module",
     "full-test": "mocha --compilers coffee:coffee-script",
     "valgrind": "coffee -c test/usb.coffee; valgrind --leak-check=full --show-possibly-lost=no node --expose-gc --trace-gc node_modules/mocha/bin/_mocha -R spec",
-    "rebuild": "node-pre-gyp rebuild --arch=ia32",
-    "draft-release-ia32": "node-pre-gyp rebuild --target_arch=ia32 && node-pre-gyp --target_arch=ia32 package && node-pre-gyp-github publish",
-    "release-ia32": "node-pre-gyp rebuild --target_arch=ia32 && node-pre-gyp --target_arch=ia32 package && node-pre-gyp-github publish --release",
-    "draft-release": "node-pre-gyp rebuild && node-pre-gyp package && node-pre-gyp-github publish",
-    "release": "node-pre-gyp rebuild && node-pre-gyp package && node-pre-gyp-github publish --release"
+    "draft-release-ia32": "node-pre-gyp rebuild --arch=ia32 --runtime=electron --target=0.36.7 && node-pre-gyp --arch=ia32 --runtime=electron --target=0.36.7 package && node-pre-gyp-github publish",
+    "release-ia32": "node-pre-gyp rebuild --arch=ia32 --runtime=electron --target=0.36.7 && node-pre-gyp --arch=ia32 --runtime=electron --target=0.36.7 package && node-pre-gyp-github publish --release",
+    "draft-release": "node-pre-gyp rebuild --arch=x64 --runtime=electron --target=0.36.7 && node-pre-gyp --arch=x64 --runtime=electron --target=0.36.7 package && node-pre-gyp-github publish",
+    "release": "node-pre-gyp rebuild --arch=x64 --runtime=electron --target=0.36.7 && node-pre-gyp package --arch=x64 --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release"
   },
   "binary": {
     "module_name": "usb_bindings",

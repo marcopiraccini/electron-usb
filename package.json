@@ -34,7 +34,9 @@
     "release-linux": "node-pre-gyp rebuild --target_arch=x64 --runtime=electron --target=0.36.7 --target_platform=linux && node-pre-gyp package --target_arch=x64 --target_platform=linux --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release",
     "release-win-ia32": "node-pre-gyp rebuild --target_arch=ia32 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp package --target_arch=ia32 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release",
     "release-win": "node-pre-gyp rebuild --target_arch=x64 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp package --target_arch=x64 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release",
-    "release": "node-pre-gyp rebuild --runtime=electron --target=0.36.7 && node-pre-gyp package --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release"
+    "release": "node-pre-gyp rebuild --runtime=electron --target=0.36.7 && node-pre-gyp package --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release",
+    "release-darwin": "node-pre-gyp rebuild --target_platform=darwin --runtime=electron --target=0.36.7 && node-pre-gyp package --target_platform=darwin --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release"
+
   },
   "binary": {
     "module_name": "usb_bindings",

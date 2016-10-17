@@ -58,7 +58,9 @@
           }],
           ['OS=="win"', {
             'defines':[
-              'WIN32_LEAN_AND_MEAN'
+              'WIN32_LEAN_AND_MEAN',
+              'HAVE_STRUCT_TIMESPEC=1',
+              '_TIMESPEC_DEFINED=1'
             ],
             'default_configuration': 'Debug',
             'configurations': {
